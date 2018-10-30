@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.base.demo.dao.mapper.PersonMapper">
+    <resultMap id="BaseResultMap" type="com.base.demo.dao.model.Person">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="age" property="age"/>
+        <result column="gender" property="gender"/>
+    </resultMap>
+
+    <select id="getById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        SELECT * from person where id=#{id}
+    </select>
+
+</mapper>

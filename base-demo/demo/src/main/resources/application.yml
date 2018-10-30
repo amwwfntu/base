@@ -1,0 +1,26 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: hwk
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.1.188:3306/mysqlstudy?characterEncoding=utf-8
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+    initialSize: 5
+    minIdle: 5
+    maxActive: 1000
+    maxWait: 1000000
+    timeBetweenEvictionRunsMillis: 600000
+    minEvictableIdleTimeMillis: 3000000
+    removeAbandonedTimeout: 3600
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    filters: stat,wall,log4j2
+    logSlowSql: true
+logging:
+  config: classpath:log4j2.xml
